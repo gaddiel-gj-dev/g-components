@@ -15,5 +15,5 @@ import '@g-comnponents/lit-text';
 ```
 
 ```html
-<g-text text="Hello World"></g-text>
+<lit-text tag-html="h1" content="Hello World"></lit-text>
 ```
