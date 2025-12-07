@@ -83,7 +83,7 @@ npm login
 ### Publicar un paquete específico
 
 ```bash
-pnpm --filter @g-comnponents/lit-button publish
+pnpm --filter @g-comnponents/lit-[component] publish
 ```
 
 ### Publicar todos los paquetes
@@ -110,36 +110,26 @@ Cada paquete incluye:
 npm install @g-comnponents/lit-button
 ```
 
-### Uso en HTML/JS
+### Uso en HTML/JS (Ejemplo con lit-text)
 
 ```javascript
-import '@g-comnponents/lit-button';
+import '@g-comnponents/lit-text';
 ```
 
 ```html
-<g-button text="Click me"></g-button>
+<lit-text tag-html="h1" content="Hello World"></lit-text>
 ```
 
 ### Uso en frameworks
 
 **React:**
-```jsx
-import '@g-comnponents/lit-button';
-
-function App() {
-  return <g-button text="Click me"></g-button>;
-}
+```
+Aún no se ha probado en react
 ```
 
 **Vue:**
-```vue
-<template>
-  <g-button text="Click me"></g-button>
-</template>
-
-<script>
-import '@g-comnponents/lit-button';
-</script>
+```
+Aún no se ha probado en vue
 ```
 
 ## 🤝 Contribuir
