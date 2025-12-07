@@ -50,6 +50,7 @@ rl.question('Nombre del componente (ej: button, card, input): ', (componentName)
     const packageJson = {
       name: `@g-components/${packageName}`,
       version: "0.0.1",
+      description: `A ${componentName} web component built with Lit`,
       type: "module",
       main: "./dist/index.js",
       module: "./dist/index.js",
@@ -61,6 +62,27 @@ rl.question('Nombre del componente (ej: button, card, input): ', (componentName)
         }
       },
       files: ["dist"],
+      keywords: [
+        "web-components",
+        "lit",
+        "lit-element",
+        componentName,
+        "ui-components",
+        "custom-elements",
+        "shadow-dom",
+        "g-components"
+      ],
+      author: "gaddiel.gomez",
+      license: "MIT",
+      repository: {
+        type: "git",
+        url: "https://github.com/gaddiel-gj-dev/g-components.git",
+        directory: `packages/${packageName}`
+      },
+      bugs: {
+        url: "https://github.com/gaddiel-gj-dev/g-components/issues"
+      },
+      homepage: `https://github.com/gaddiel-gj-dev/g-components/tree/master/packages/${packageName}#readme`,
       scripts: {
         dev: "vite",
         build: "vite build",

@@ -1,6 +1,7 @@
 {
   "name": "@g-components/lit-text",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "description": "A flexible text web component for dynamic HTML tags built with Lit",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -12,6 +13,28 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "web-components",
+    "lit",
+    "lit-element",
+    "text",
+    "typography",
+    "ui-components",
+    "custom-elements",
+    "shadow-dom",
+    "g-components"
+  ],
+  "author": "gaddiel.gomez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaddiel-gj-dev/g-components.git",
+    "directory": "packages/lit-text"
+  },
+  "bugs": {
+    "url": "https://github.com/gaddiel-gj-dev/g-components/issues"
+  },
+  "homepage": "https://github.com/gaddiel-gj-dev/g-components/tree/master/packages/lit-text#readme",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
