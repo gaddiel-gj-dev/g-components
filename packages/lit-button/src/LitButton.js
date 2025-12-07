@@ -67,13 +67,13 @@ export class LitButton extends LitElement {
   }
 
   _handleClick() {    
-    this.dispatchEvent(new CustomEvent('button-click'), {
+    this.dispatchEvent(new CustomEvent('button-click', {
       bubbles: true,
       composed: true,
       detail: {
         variant: this.variant,
       }
-    });
+    }));
   }
 
   render() {

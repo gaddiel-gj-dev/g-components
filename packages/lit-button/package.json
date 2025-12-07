@@ -1,6 +1,6 @@
 {
   "name": "@g-components/lit-button",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "A customizable button web component built with Lit",
   "type": "module",
   "main": "./dist/index.js",
