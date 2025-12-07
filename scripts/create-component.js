@@ -92,7 +92,12 @@ export default defineConfig({
       formats: ['es']
     },
     rollupOptions: {
-      external: ['lit', 'lit/decorators.js', 'lit/directives/class-map.js']
+      external: [
+        'lit',
+        'lit/decorators.js',
+        'lit/directives/class-map.js',
+        'lit/directives/unsafe-html.js'
+      ]
     }
   }
 })
