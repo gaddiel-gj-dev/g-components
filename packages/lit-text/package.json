@@ -1,5 +1,5 @@
 {
-  "name": "@g-comnponents/lit-text",
+  "name": "@g-components/lit-text",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",

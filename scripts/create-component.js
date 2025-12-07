@@ -48,7 +48,7 @@ rl.question('Nombre del componente (ej: button, card, input): ', (componentName)
 
     // package.json
     const packageJson = {
-      name: `@g-comnponents/${packageName}`,
+      name: `@g-components/${packageName}`,
       version: "0.0.1",
       type: "module",
       main: "./dist/index.js",
@@ -391,12 +391,12 @@ customElements.define('lit-${componentName}', ${className});
     <section class="section">
       <h2>Instalación</h2>
       <div class="code-block">
-        <code>npm install @g-comnponents/lit-${componentName}</code>
+        <code>npm install @g-components/lit-${componentName}</code>
       </div>
       
       <h3 style="margin-top: 1.5rem;">Uso en tu proyecto</h3>
       <div class="code-block">
-        <code>import '@g-comnponents/lit-${componentName}';</code>
+        <code>import '@g-components/lit-${componentName}';</code>
       </div>
     </section>
   </div>
@@ -407,31 +407,31 @@ customElements.define('lit-${componentName}', ${className});
     import './src/Lit${className}.${fileExt}';
 
     // En producción, usarías:
-    // import '@g-comnponents/lit-${componentName}';
+    // import '@g-components/lit-${componentName}';
   </script>
 </body>
 </html>
 `;
 
     // README.md
-    const readme = `# @g-comnponents/${packageName}
+    const readme = `# @g-components/${packageName}
 
 Componente Lit: ${componentName}
 
 ## Instalación
 
 \`\`\`bash
-npm install @g-comnponents/${packageName}
+npm install @g-components/${packageName}
 \`\`\`
 
 ## Uso
 
 \`\`\`${useTypeScript ? 'typescript' : 'javascript'}
-import '@g-comnponents/${packageName}';
+import '@g-components/${packageName}';
 \`\`\`
 
 \`\`\`html
-<g-${componentName} text="Hello World"></g-${componentName}>
+<lit-${componentName} text="Hello World"></lit-${componentName}>
 \`\`\`
 `;
 
