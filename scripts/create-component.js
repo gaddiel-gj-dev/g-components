@@ -87,7 +87,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.${fileExt}'),
-      name: '${componentName.charAt(0).toUpperCase() + componentName.slice(1)}',
+      name: 'Lit${componentName.charAt(0).toUpperCase() + componentName.slice(1)}',
       fileName: 'index',
       formats: ['es']
     },
@@ -121,13 +121,13 @@ export default defineConfig({
       include: ["src/**/*"]
     } : null;
 
-    // Nombre de la clase en PascalCase
-    const className = componentName.split('-').map(part => 
+    // Nombre de la clase en PascalCase con prefijo Lit
+    const className = 'Lit' + componentName.split('-').map(part => 
       part.charAt(0).toUpperCase() + part.slice(1)
     ).join('');
 
     // src/index (js o ts)
-    const indexCode = `export { ${className} } from './Lit${className}.${fileExt}';
+    const indexCode = `export { ${className} } from './${className}.${fileExt}';
 `;
 
     // src/component (TypeScript)
@@ -409,7 +409,7 @@ customElements.define('lit-${componentName}', ${className});
   <!-- Importar el componente en modo desarrollo -->
   <script type="module">
     // En desarrollo, importa desde src
-    import './src/Lit${className}.${fileExt}';
+    import './src/${className}.${fileExt}';
 
     // En producción, usarías:
     // import '@g-components/lit-${componentName}';
@@ -447,7 +447,7 @@ import '@g-components/${packageName}';
       fs.writeFileSync(path.join(packagePath, 'tsconfig.json'), JSON.stringify(tsConfig, null, 2));
     }
     fs.writeFileSync(path.join(packagePath, 'src', `index.${fileExt}`), indexCode);
-    fs.writeFileSync(path.join(packagePath, 'src', `Lit${className}.${fileExt}`), componentCode);
+    fs.writeFileSync(path.join(packagePath, 'src', `${className}.${fileExt}`), componentCode);
     fs.writeFileSync(path.join(packagePath, 'index.html'), indexHTML);
     fs.writeFileSync(path.join(packagePath, 'README.md'), readme);
 
