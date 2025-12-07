@@ -1,0 +1,10 @@
+{
+  "name": "@g-comnponents/lit-components",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --filter \"./packages/*\" build",
+    "dev": "pnpm --filter \"./packages/*\" dev",
+    "publish:all": "pnpm --filter \"./packages/*\" publish",
+    "create:component": "node scripts/create-component.js"
+  }
+}
