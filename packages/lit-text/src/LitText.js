@@ -1,33 +1,32 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css, nothing } from 'lit';
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
-export class Text extends LitElement {
+export class LitText extends LitElement {
   static properties = {
-    text: { type: String }
+    /**
+     * @desc Tag name to be created (e.g., 'p', 'h1', 'div').
+     * @type {string}
+     */
+    tagHtml: { type: String, attribute: 'tag-html' },
+    /**
+     * @desc Content to be placed inside the tag.
+     * @type {string}
+     */
+    content: { type: String }
   };
 
-  static styles = css`
-    :host {
-      display: block;
-      padding: 1rem;
-    }
-
-    .container {
-      font-family: system-ui, -apple-system, sans-serif;
-    }
-  `;
 
   constructor() {
     super();
-    this.text = 'Hello from text';
+    this.tagHtml = '';
+    this.content = '';
   }
 
   render() {
     return html`
-      <div class="container">
-        <p>${this.text}</p>
-      </div>
+      ${this.tagHtml ? unsafeHTML(`<${this.tagHtml}>${this.content}</${this.tagHtml}>`) : nothing}
     `;
   }
 }
 
-customElements.define('lit-text', Text);
+customElements.define('lit-text', LitText);

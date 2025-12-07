@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Demo - g-text</title>
+  <title>Demo - lit-text</title>
   <style>
     * {
       margin: 0;
@@ -123,22 +123,22 @@
     <section class="section">
       <h2>Ejemplo Básico</h2>
       <div class="demo-item">
-        <h3>Uso por defecto</h3>
+        <h3>Con etiqueta h1</h3>
         <div class="demo-example">
-          <lit-text></lit-text>
+          <lit-text tag-html="h1" content="Título con H1"></lit-text>
         </div>
         <div class="code-block">
-          <code>&lt;lit-text&gt;&lt;/lit-text&gt;</code>
+          <code>&lt;lit-text tag-html="h1" content="Título con H1"&gt;&lt;/lit-text&gt;</code>
         </div>
       </div>
 
       <div class="demo-item">
-        <h3>Con texto personalizado</h3>
+        <h3>Con etiqueta p</h3>
         <div class="demo-example">
-          <lit-text text="Texto personalizado"></lit-text>
+          <lit-text tag-html="p" content="Párrafo de texto"></lit-text>
         </div>
         <div class="code-block">
-          <code>&lt;lit-text text="Texto personalizado"&gt;&lt;/lit-text&gt;</code>
+          <code>&lt;lit-text tag-html="p" content="Párrafo de texto"&gt;&lt;/lit-text&gt;</code>
         </div>
       </div>
     </section>
@@ -147,16 +147,23 @@
     <section class="section">
       <h2>Variaciones</h2>
       <div class="demo-item">
-        <h3>Ejemplo 1</h3>
+        <h3>Etiqueta h2</h3>
         <div class="demo-example">
-          <lit-text text="Ejemplo variación 1"></lit-text>
+          <lit-text tag-html="h2" content="Subtítulo con H2"></lit-text>
         </div>
       </div>
 
       <div class="demo-item">
-        <h3>Ejemplo 2</h3>
+        <h3>Etiqueta h3</h3>
         <div class="demo-example">
-          <lit-text text="Ejemplo variación 2"></lit-text>
+          <lit-text tag-html="h3" content="Subtítulo con H3"></lit-text>
+        </div>
+      </div>
+
+      <div class="demo-item">
+        <h3>Etiqueta span</h3>
+        <div class="demo-example">
+          <lit-text tag-html="span" content="Texto inline con span"></lit-text>
         </div>
       </div>
     </section>
@@ -175,12 +182,17 @@
         </thead>
         <tbody>
           <tr>
-            <td><code>text</code></td>
+            <td><code>tag-html</code></td>
             <td><code>String</code></td>
-            <td><code>"Hello from text"</code></td>
-            <td>Texto a mostrar en el componente</td>
+            <td><code>""</code></td>
+            <td>Etiqueta HTML a renderizar (h1, h2, p, span, etc.)</td>
           </tr>
-          <!-- Agrega más propiedades aquí -->
+          <tr>
+            <td><code>content</code></td>
+            <td><code>String</code></td>
+            <td><code>""</code></td>
+            <td>Contenido de texto a mostrar</td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -189,12 +201,12 @@
     <section class="section">
       <h2>Instalación</h2>
       <div class="code-block">
-        <code>npm install @g-comnponents/lit-text</code>
+        <code>npm install @g-components/lit-text</code>
       </div>
       
       <h3 style="margin-top: 1.5rem;">Uso en tu proyecto</h3>
       <div class="code-block">
-        <code>import '@g-comnponents/lit-text';</code>
+        <code>import '@g-components/lit-text';</code>
       </div>
     </section>
   </div>
@@ -205,7 +217,7 @@
     import './src/LitText.js';
 
     // En producción, usarías:
-    // import '@g-comnponents/lit-text';
+    // import '@g-components/lit-text';
   </script>
 </body>
 </html>

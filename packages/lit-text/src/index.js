@@ -1,1 +1,1 @@
-export { Text } from './LitText.js';
+export { LitText } from './LitText.js';
