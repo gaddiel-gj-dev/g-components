@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - lit-button</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h2 {
+      color: #444;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .demo-item {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #fafafa;
+      border-radius: 4px;
+      border-left: 4px solid #4CAF50;
+    }
+
+    .demo-item h3 {
+      color: #555;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .demo-example {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .code-block code {
+      color: #f8f8f2;
+    }
+
+    .property-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .property-table th,
+    .property-table td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .property-table th {
+      background: #f5f5f5;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .property-table code {
+      background: #f0f0f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1>🎨 lit-button</h1>
+    <p class="subtitle">Demostración y ejemplos de uso del componente</p>
+
+    <!-- Ejemplo básico -->
+    <section class="section">
+
+      <div class="demo-item">
+        <h3>Variantes y estados</h3>
+        <div class="demo-example">
+          <lit-button text="Botón Primario" variant="primary"></lit-button>
+          <lit-button text="Botón Secundario" variant="secondary"></lit-button>
+          <lit-button text="Botón Deshabilitado" variant="primary" disabled></lit-button>
+          <lit-button text="Botón Peligro" variant="danger"></lit-button>
+        </div>
+        <div class="code-block">
+          <code>
+            &lt;lit-button text="Botón Primario" variant="primary"&gt;&lt;/lit-button&gt; <br>
+            &lt;lit-button text="Botón Secundario" variant="secondary"&gt;&lt;/lit-button&gt; <br>
+            &lt;lit-button text="Botón Deshabilitado" variant="primary" disabled&gt;&lt;/lit-button&gt; <br>
+            &lt;lit-button text="Botón Peligro" variant="danger"&gt;&lt;/lit-button&gt;
+          </code>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Instalación -->
+    <section class="section">
+      <h2>Instalación</h2>
+      <div class="code-block">
+        <code>npm install @g-components/lit-button</code>
+      </div>
+      
+      <h3 style="margin-top: 1.5rem;">Uso en tu proyecto</h3>
+      <div class="code-block">
+        <code>import '@g-components/lit-button';</code>
+      </div>
+    </section>
+  </div>
+
+  <!-- Importar el componente en modo desarrollo -->
+  <script type="module">
+    // En desarrollo, importa desde src
+    import './src/LitButton.js';
+
+    // En producción, usarías:
+    // import '@g-components/lit-button';
+  </script>
+</body>
+</html>
