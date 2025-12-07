@@ -1,6 +1,6 @@
 {
   "name": "@g-components/lit-text",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A flexible text web component for dynamic HTML tags built with Lit",
   "type": "module",
   "main": "./dist/index.js",
