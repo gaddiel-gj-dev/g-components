@@ -18,6 +18,16 @@ importers:
         specifier: ^5.0.0
         version: 5.4.21
 
+  packages/lit-card:
+    dependencies:
+      lit:
+        specifier: ^3.0.0
+        version: 3.3.1
+    devDependencies:
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21
+
   packages/lit-image:
     dependencies:
       lit:
@@ -37,6 +47,24 @@ importers:
       vite:
         specifier: ^5.0.0
         version: 5.4.21
+
+  packages/ui:
+    dependencies:
+      '@g-components/lit-button':
+        specifier: workspace:*
+        version: link:../lit-button
+      '@g-components/lit-card':
+        specifier: workspace:*
+        version: link:../lit-card
+      '@g-components/lit-image':
+        specifier: workspace:*
+        version: link:../lit-image
+      '@g-components/lit-text':
+        specifier: workspace:*
+        version: link:../lit-text
+      lit:
+        specifier: ^3.0.0
+        version: 3.3.1
 
 packages:
 

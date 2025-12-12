@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - lit-card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h2 {
+      margin-bottom: 1.5rem;
+      color: #667eea;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+    }
+
+    lit-card {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🃏 lit-card - Tarjetas Flexibles</h1>
+
+    <!-- Imagen en diferentes posiciones (vertical) -->
+    <section class="section">
+      <h2>Layout Vertical - Posiciones de Imagen</h2>
+      <div class="grid">
+        <!-- Imagen arriba -->
+        <lit-card layout="vertical" image-position="top" elevation="medium" size="m">
+          <img slot="image" src="https://picsum.photos/400/250" alt="Demo">
+          <h3>Imagen Arriba</h3>
+          <p>La imagen está en la parte superior de la tarjeta.</p>
+          <div slot="footer">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+            <lit-button text="Compartir" variant="secondary"></lit-button>
+          </div>
+        </lit-card>
+
+        <!-- Imagen abajo -->
+        <lit-card layout="vertical" image-position="bottom" elevation="medium" size="m">
+          <h3>Imagen Abajo</h3>
+          <p>La imagen está en la parte inferior de la tarjeta.</p>
+          <img slot="image" src="https://picsum.photos/400/250" alt="Demo">
+          <div slot="footer">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+            <lit-button text="Compartir" variant="secondary"></lit-button>
+          </div>
+        </lit-card>
+
+        <!-- Sin imagen -->
+        <lit-card layout="vertical" image-position="none" elevation="medium" size="m">
+          <h3>Sin Imagen</h3>
+          <p>Esta tarjeta no tiene imagen, solo contenido de texto.</p>
+          <div slot="footer">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Layout Horizontal -->
+    <section class="section">
+      <h2>Layout Horizontal</h2>
+      <div class="grid-2">
+        <!-- Imagen izquierda -->
+        <lit-card layout="horizontal" image-position="left" elevation="medium" size="l">
+          <img slot="image" src="https://picsum.photos/300/400" alt="Demo">
+          <h3>Imagen Izquierda</h3>
+          <p>Perfecta para artículos de blog o noticias con imagen lateral.</p>
+          <div slot="footer">
+            <lit-button text="Leer más" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+
+        <!-- Imagen derecha -->
+        <lit-card layout="horizontal" image-position="right" elevation="medium" size="l">
+          <h3>Imagen Derecha</h3>
+          <p>La imagen está a la derecha del contenido de texto.</p>
+          <img slot="image" src="https://picsum.photos/300/400" alt="Demo">
+          <div slot="footer">
+            <lit-button text="Leer más" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Con y Sin Footer -->
+    <section class="section">
+      <h2>Con Acciones Externas (Mejor para Responsividad)</h2>
+      <div class="grid">
+        <lit-card elevation="medium" size="s" image-position="none" show-footer="true">
+          <h3>Notificación</h3>
+          <p>Tienes 3 mensajes nuevos sin leer.</p>
+          <div slot="actions">
+            <lit-button text="Ver" variant="primary"></lit-button>
+            <lit-button text="Descartar" variant="secondary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card elevation="medium" size="s" image-position="none" show-footer="false">
+          <h3>Solo Información</h3>
+          <p>Esta tarjeta no requiere acciones, solo muestra información.</p>
+        </lit-card>
+
+        <lit-card elevation="medium" size="m" image-position="none" show-footer="true">
+          <h3>Card con Más Acciones</h3>
+          <p>Los botones se colocan fuera de la card para mejor responsividad.</p>
+          <div slot="actions">
+            <lit-button text="Guardar" variant="primary"></lit-button>
+            <lit-button text="Cancelar" variant="secondary"></lit-button>
+            <lit-button text="Eliminar" variant="danger"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Footer Interno (Legacy) -->
+    <section class="section">
+      <h2>Con Footer Interno (Para Casos Específicos)</h2>
+      <div class="grid">
+        <lit-card elevation="medium" show-footer="true" footer-align="left" size="s" image-position="none">
+          <h3>Footer Izquierda</h3>
+          <p>Botones dentro del footer, alineados a la izquierda.</p>
+          <div slot="footer">
+            <lit-button text="OK" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card elevation="medium" show-footer="true" footer-align="center" size="s" image-position="none">
+          <h3>Footer Centro</h3>
+          <p>Botones centrados en el footer interno.</p>
+          <div slot="footer">
+            <lit-button text="Aceptar" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Diferentes elevaciones -->
+    <section class="section">
+      <h2>Elevaciones (Sombras)</h2>
+      <div class="grid">
+        <lit-card elevation="none" image-position="none" size="s">
+          <h3>None</h3>
+          <p>Sin sombra, solo borde.</p>
+        </lit-card>
+
+        <lit-card elevation="low" image-position="none" size="s">
+          <h3>Low</h3>
+          <p>Sombra suave.</p>
+        </lit-card>
+
+        <lit-card elevation="medium" image-position="none" size="s">
+          <h3>Medium</h3>
+          <p>Sombra media (default).</p>
+        </lit-card>
+
+        <lit-card elevation="high" image-position="none" size="s">
+          <h3>High</h3>
+          <p>Sombra pronunciada.</p>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Diferentes paddings -->
+    <section class="section">
+      <h2>Tamaños de Padding</h2>
+      <div class="grid">
+        <lit-card padding="s" elevation="medium" image-position="none" size="m">
+          <h3>Small Padding</h3>
+          <p>Espaciado pequeño.</p>
+        </lit-card>
+
+        <lit-card padding="m" elevation="medium" image-position="none" size="m">
+          <h3>Medium Padding</h3>
+          <p>Espaciado medio (default).</p>
+        </lit-card>
+
+        <lit-card padding="l" elevation="medium" image-position="none" size="m">
+          <h3>Large Padding</h3>
+          <p>Espaciado grande.</p>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Diferentes tamaños de Card -->
+    <section class="section">
+      <h2>Tamaños de Card (Ancho)</h2>
+      <div style="display: flex; flex-direction: column; gap: 2rem; align-items: flex-start;">
+        <lit-card size="xs" elevation="medium" image-position="none">
+          <h3>Extra Small (240px)</h3>
+          <p>Card muy compacta para contenido pequeño.</p>
+          <div slot="footer">
+            <lit-button text="Ver" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card size="s" elevation="medium" image-position="none">
+          <h3>Small (320px)</h3>
+          <p>Card pequeña para contenido compacto.</p>
+          <div slot="footer">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card size="m" elevation="medium" image-position="none">
+          <h3>Medium (400px)</h3>
+          <p>Tamaño por defecto, ideal para la mayoría de casos.</p>
+          <div slot="footer">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card size="l" elevation="medium" image-position="none">
+          <h3>Large (600px)</h3>
+          <p>Card grande para contenido más extenso o cuando necesitas más espacio visual.</p>
+          <div slot="footer">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card size="xl" elevation="medium" image-position="none">
+          <h3>Extra Large (800px)</h3>
+          <p>Card extra grande para contenido principal o destacado. Perfecta para encabezados de sección o contenido hero.</p>
+          <div slot="footer">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+            <lit-button text="Compartir" variant="secondary"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Ejemplo Completo con otros componentes -->
+    <section class="section">
+      <h2>Con Otros Componentes de @g-components</h2>
+      <div class="grid">
+        <lit-card elevation="high" size="m">
+          <lit-image slot="image" src="https://picsum.photos/400/250" size="l" fit="cover"></lit-image>
+          <lit-text tag-html="h3" content="Usando lit-text" size="xl"></lit-text>
+          <lit-text tag-html="p" content="Puedes usar todos los componentes de @g-components dentro de lit-card" size="m"></lit-text>
+          <div slot="footer">
+            <lit-button text="Aceptar" variant="primary"></lit-button>
+            <lit-button text="Cancelar" variant="secondary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card layout="horizontal" image-position="left" elevation="high" size="l">
+          <lit-image slot="image" src="https://picsum.photos/300/400" size="l" fit="cover"></lit-image>
+          <lit-text tag-html="h3" content="Card Horizontal" size="xl"></lit-text>
+          <lit-text tag-html="p" content="Combinando layout horizontal con otros componentes" size="m"></lit-text>
+          <div slot="footer">
+            <lit-button text="Ver" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Ejemplo de Usuario -->
+    <section class="section">
+      <h2>Ejemplo: Tarjeta de Usuario</h2>
+      <div class="grid">
+        <lit-card elevation="medium" padding="l" image-position="none">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <lit-image src="https://picsum.photos/100/100" size="s" fit="cover" style="border-radius: 50%;"></lit-image>
+            <div>
+              <lit-text tag-html="h3" content="Juan Pérez" size="l"></lit-text>
+              <lit-text content="Desarrollador Frontend" size="s" style="color: #666;"></lit-text>
+            </div>
+          </div>
+          <lit-text content="Apasionado por crear experiencias de usuario increíbles con Web Components." size="m"></lit-text>
+          <div slot="footer">
+            <lit-button text="Seguir" variant="primary"></lit-button>
+            <lit-button text="Mensaje" variant="secondary"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+  </div>
+
+  <!-- Importar componentes -->
+  <script type="module">
+    import './src/LitCard.js';
+    import '../lit-text/src/LitText.js';
+    import '../lit-button/src/LitButton.js';
+    import '../lit-image/src/LitImage.js';
+  </script>
+</body>
+</html>

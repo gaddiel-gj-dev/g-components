@@ -1,0 +1,43 @@
+{
+  "name": "@g-components/ui",
+  "version": "0.1.0",
+  "description": "Complete UI component library built with Lit - includes all @g-components",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js"
+    }
+  },
+  "keywords": [
+    "web-components",
+    "lit",
+    "lit-element",
+    "ui-components",
+    "custom-elements",
+    "shadow-dom",
+    "g-components",
+    "component-library"
+  ],
+  "author": "gaddiel.gomez",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaddiel-gj-dev/g-components.git",
+    "directory": "packages/ui"
+  },
+  "bugs": {
+    "url": "https://github.com/gaddiel-gj-dev/g-components/issues"
+  },
+  "homepage": "https://github.com/gaddiel-gj-dev/g-components/tree/master/packages/ui#readme",
+  "dependencies": {
+    "@g-components/lit-text": "workspace:*",
+    "@g-components/lit-button": "workspace:*",
+    "@g-components/lit-image": "workspace:*",
+    "@g-components/lit-card": "workspace:*"
+  },
+  "peerDependencies": {
+    "lit": "^3.0.0"
+  }
+}

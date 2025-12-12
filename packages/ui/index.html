@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - @g-components/ui</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      padding: 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      color: #667eea;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 1.25rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+      border-bottom: 2px solid #667eea;
+      padding-bottom: 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-demo {
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .text-sizes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>@g-components/ui</h1>
+      <p>Todos los componentes en un solo paquete</p>
+    </div>
+
+    <!-- Sección de Texto -->
+    <section class="section">
+      <h2>📝 lit-text - Texto con tamaños</h2>
+      <div class="text-sizes">
+        <lit-text content="3xl - Hero Title (40px)" size="3xl"></lit-text>
+        <lit-text content="2xl - Large Title (32px)" size="2xl"></lit-text>
+        <lit-text content="xl - Section Title (24px)" size="xl"></lit-text>
+        <lit-text content="l - Subtitle (20px)" size="l"></lit-text>
+        <lit-text content="m - Content (18px) - Default" size="m"></lit-text>
+        <lit-text content="s - Base Text (16px)" size="s"></lit-text>
+        <lit-text content="xs - Secondary (14px)" size="xs"></lit-text>
+        <lit-text content="2xs - Metadata (12px)" size="2xs"></lit-text>
+        <lit-text content="3xs - Tiny (10px)" size="3xs"></lit-text>
+      </div>
+    </section>
+
+    <!-- Sección de Botones -->
+    <section class="section">
+      <h2>🔘 lit-button - Botones</h2>
+      <div class="button-group">
+        <lit-button text="Primary Button" variant="primary"></lit-button>
+        <lit-button text="Secondary Button" variant="secondary"></lit-button>
+        <lit-button text="Danger Button" variant="danger"></lit-button>
+        <lit-button text="Disabled Button" disabled></lit-button>
+      </div>
+    </section>
+
+    <!-- Sección de Imágenes -->
+    <section class="section">
+      <h2>🖼️ lit-image - Imágenes con tamaños</h2>
+      <div class="image-grid">
+        <div>
+          <p style="margin-bottom: 0.5rem; font-weight: bold;">3xs (48px)</p>
+          <lit-image src="https://picsum.photos/400/300" alt="3xs" size="3xs"></lit-image>
+        </div>
+        <div>
+          <p style="margin-bottom: 0.5rem; font-weight: bold;">xs (96px)</p>
+          <lit-image src="https://picsum.photos/400/300" alt="xs" size="xs"></lit-image>
+        </div>
+        <div>
+          <p style="margin-bottom: 0.5rem; font-weight: bold;">s (128px)</p>
+          <lit-image src="https://picsum.photos/400/300" alt="s" size="s"></lit-image>
+        </div>
+        <div>
+          <p style="margin-bottom: 0.5rem; font-weight: bold;">m (192px)</p>
+          <lit-image src="https://picsum.photos/400/300" alt="m" size="m"></lit-image>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Cards -->
+    <section class="section">
+      <h2>🃏 lit-card - Tarjetas</h2>
+      <div class="grid">
+        <lit-card>
+          <lit-text tag-html="h3" content="Tarjeta 1" size="l"></lit-text>
+          <lit-text tag-html="p" content="Esta es una tarjeta de ejemplo con contenido dinámico." size="s"></lit-text>
+          <div style="margin-top: 1rem;">
+            <lit-button text="Ver más" variant="primary"></lit-button>
+          </div>
+        </lit-card>
+
+        <lit-card>
+          <lit-text tag-html="h3" content="Tarjeta 2" size="l"></lit-text>
+          <lit-image src="https://picsum.photos/300/200" alt="Card image" size="l" fit="cover" style="margin: 1rem 0;"></lit-image>
+          <lit-text tag-html="p" content="Tarjeta con imagen integrada." size="s"></lit-text>
+        </lit-card>
+
+        <lit-card>
+          <lit-text tag-html="h3" content="Tarjeta 3" size="l"></lit-text>
+          <lit-text tag-html="p" content="Todos los componentes trabajando juntos." size="s"></lit-text>
+          <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+            <lit-button text="Aceptar" variant="primary"></lit-button>
+            <lit-button text="Cancelar" variant="secondary"></lit-button>
+          </div>
+        </lit-card>
+      </div>
+    </section>
+
+    <!-- Ejemplo Completo -->
+    <section class="section">
+      <h2>✨ Ejemplo Completo</h2>
+      <lit-card style="max-width: 600px; margin: 0 auto;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+          <lit-image src="https://picsum.photos/100/100" alt="Avatar" size="s" fit="cover" style="border-radius: 50%;"></lit-image>
+          <div>
+            <lit-text tag-html="h3" content="Usuario Demo" size="xl"></lit-text>
+            <lit-text content="Desarrollador Web" size="s"></lit-text>
+          </div>
+        </div>
+        
+        <lit-text 
+          tag-html="p" 
+          content="Este es un ejemplo de todos los componentes de <strong>@g-components/ui</strong> trabajando juntos en una sola tarjeta." 
+          size="m"
+          style="margin: 1rem 0;">
+        </lit-text>
+
+        <div style="display: flex; gap: 0.5rem;">
+          <lit-button text="Seguir" variant="primary"></lit-button>
+          <lit-button text="Mensaje" variant="secondary"></lit-button>
+          <lit-button text="Más" variant="secondary"></lit-button>
+        </div>
+      </lit-card>
+    </section>
+
+    <footer style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+      <lit-text content="Instalación: npm install @g-components/ui" size="s" style="color: #666;"></lit-text>
+      <br>
+      <lit-text content="GitHub: gaddiel-gj-dev/g-components" size="xs" style="color: #999; margin-top: 0.5rem;"></lit-text>
+    </footer>
+  </div>
+
+  <!-- Importar todos los componentes -->
+  <script type="module">
+    // En desarrollo, importa desde los componentes directamente
+    import '../lit-text/src/LitText.js';
+    import '../lit-button/src/LitButton.js';
+    import '../lit-image/src/LitImage.js';
+    import '../lit-card/src/LitCard.js';
+
+    // En producción, usarías:
+    // import '@g-components/ui';
+
+    // Agregar listeners a los botones
+    document.querySelectorAll('lit-button').forEach(btn => {
+      btn.addEventListener('button-click', (e) => {
+        console.log('Botón clickeado:', e.target.text);
+      });
+    });
+  </script>
+</body>
+</html>
