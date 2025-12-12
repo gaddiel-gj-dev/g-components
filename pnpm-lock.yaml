@@ -20,6 +20,15 @@ importers:
 
   packages/lit-card:
     dependencies:
+      '@g-components/lit-button':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@g-components/lit-image':
+        specifier: ^0.1.0
+        version: 0.1.0
+      '@g-components/lit-text':
+        specifier: ^1.1.0
+        version: 1.1.0
       lit:
         specifier: ^3.0.0
         version: 3.3.1
@@ -205,6 +214,15 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@g-components/lit-button@0.1.0':
+    resolution: {integrity: sha512-8TlCBmD0QAPOsEY49Xs5+BSSY32xJY19UcPY2bh9uzWxYxLYTDKaplvrnQIIEcGqY6NUm/LfQdVWyHTWcDCuQQ==}
+
+  '@g-components/lit-image@0.1.0':
+    resolution: {integrity: sha512-rwyTO6uHjesOCcAXHZ3QTlAPSpSPywa3LpZ7TNnXAkzVq833A8cofEHqEtwZT/uYkY8zLYbjx8N3CiGpy+9uoA==}
+
+  '@g-components/lit-text@1.1.0':
+    resolution: {integrity: sha512-aaBLDAGr0VUfj1SHKx+TeoPl0rwvYCz+B6AWsGfiqgmAjITctMxpBsQbYZJBttmideS2gQ2sHJ4MVbitV7sYKA==}
 
   '@lit-labs/ssr-dom-shim@1.4.0':
     resolution: {integrity: sha512-ficsEARKnmmW5njugNYKipTm4SFnbik7CXtoencDZzmzo/dQ+2Q0bgkzJuoJP20Aj0F+izzJjOqsnkd6F/o1bw==}
@@ -469,6 +487,18 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@g-components/lit-button@0.1.0':
+    dependencies:
+      lit: 3.3.1
+
+  '@g-components/lit-image@0.1.0':
+    dependencies:
+      lit: 3.3.1
+
+  '@g-components/lit-text@1.1.0':
+    dependencies:
+      lit: 3.3.1
 
   '@lit-labs/ssr-dom-shim@1.4.0': {}
 
